@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, User } from 'lucide-react';
+import { Menu, User, PackageSearch } from 'lucide-react';
 import { Logo } from './logo';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#products', label: 'Products' },
+  { href: '/track-order', label: 'Track Order' },
   { href: '/about', label: 'About' },
 ];
 
@@ -20,8 +21,9 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-primary"
+              className="transition-colors hover:text-primary flex items-center gap-2"
             >
+              {link.label === 'Track Order' && <PackageSearch className="h-4 w-4" />}
               {link.label}
             </Link>
           ))}
@@ -49,8 +51,9 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="transition-colors hover:text-primary"
+                    className="transition-colors hover:text-primary flex items-center gap-2"
                   >
+                     {link.label === 'Track Order' && <PackageSearch className="h-4 w-4" />}
                     {link.label}
                   </Link>
                 ))}

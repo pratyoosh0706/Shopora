@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { ShoppingCart, Star } from 'lucide-react';
+import { CreditCard, ShoppingCart, Star } from 'lucide-react';
+import Link from 'next/link';
 
 export default async function ProductDetailPage({
   params,
@@ -61,10 +62,18 @@ export default async function ProductDetailPage({
           </div>
           <div className="mt-auto pt-8">
             <p className="text-4xl font-bold mb-4">{formattedPrice}</p>
-            <Button size="lg" className="w-full">
-              <ShoppingCart className="mr-2 h-5 w-5" />
-              Add to Cart
-            </Button>
+            <div className="flex gap-4">
+              <Button size="lg" className="w-full">
+                <ShoppingCart className="mr-2 h-5 w-5" />
+                Add to Cart
+              </Button>
+              <Link href={`/checkout?productId=${product.id}`} className="w-full">
+                <Button size="lg" variant="outline" className="w-full">
+                  <CreditCard className="mr-2 h-5 w-5" />
+                  Buy Now
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
