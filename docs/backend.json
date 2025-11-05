@@ -1,0 +1,337 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the Shopora e-commerce platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user."
+        },
+        "name": {
+          "type": "string",
+          "description": "The user's full name."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address.",
+          "format": "email"
+        },
+        "interests": {
+          "type": "array",
+          "description": "An array of the user's interests.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "interests"
+      ]
+    },
+    "Admin": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Admin",
+      "type": "object",
+      "description": "Represents an administrator of the Shopora platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the administrator."
+        },
+        "username": {
+          "type": "string",
+          "description": "The administrator's username."
+        }
+      },
+      "required": [
+        "id",
+        "username"
+      ]
+    },
+    "Product": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product available for sale on the Shopora platform.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the product."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the product (e.g., iPhone 114 Pro)."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the product."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the product in INR."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category the product belongs to."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the product image.",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "price",
+        "category"
+      ]
+    },
+    "Order": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Order",
+      "type": "object",
+      "description": "Represents an order placed by a user.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the order."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Order)"
+        },
+        "productId": {
+          "type": "string",
+          "description": "Reference to Product. (Relationship: Product 1:N Order)"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the order (e.g., pending, processing, shipped, delivered)."
+        },
+        "orderDate": {
+          "type": "string",
+          "description": "The date and time when the order was placed.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "productId",
+        "status"
+      ]
+    },
+    "Payment": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Payment",
+      "type": "object",
+      "description": "Represents a payment associated with an order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the payment."
+        },
+        "orderId": {
+          "type": "string",
+          "description": "Reference to Order. (Relationship: Order 1:1 Payment)"
+        },
+        "paymentDate": {
+          "type": "string",
+          "description": "The date and time when the payment was processed.",
+          "format": "date-time"
+        },
+        "amount": {
+          "type": "number",
+          "description": "The amount paid for the order."
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "The method of payment used (e.g., credit card, debit card, UPI)."
+        },
+        "transactionId": {
+          "type": "string",
+          "description": "The transaction ID from the payment gateway."
+        }
+      },
+      "required": [
+        "id",
+        "orderId",
+        "paymentDate",
+        "amount",
+        "paymentMethod",
+        "transactionId"
+      ]
+    },
+    "OrderTracking": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "OrderTracking",
+      "type": "object",
+      "description": "Represents the tracking information for an order.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the tracking information."
+        },
+        "orderId": {
+          "type": "string",
+          "description": "Reference to Order. (Relationship: Order 1:1 OrderTracking)"
+        },
+        "trackingNumber": {
+          "type": "string",
+          "description": "The tracking number for the order."
+        },
+        "currentLocation": {
+          "type": "string",
+          "description": "The current location of the order."
+        },
+        "estimatedDeliveryDate": {
+          "type": "string",
+          "description": "The estimated delivery date for the order.",
+          "format": "date-time"
+        },
+        "statusUpdates": {
+          "type": "array",
+          "description": "An array of status updates for the order.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "orderId",
+        "trackingNumber",
+        "currentLocation",
+        "estimatedDeliveryDate",
+        "statusUpdates"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. Only the user can access their own profile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "Admin",
+          "schema": {
+            "$ref": "#/backend/entities/Admin"
+          },
+          "description": "Indicates admin privileges. Existence of a document with the user's ID grants admin access.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the administrator."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/products/{productId}",
+        "definition": {
+          "entityName": "Product",
+          "schema": {
+            "$ref": "#/backend/entities/Product"
+          },
+          "description": "Stores product details. Publicly readable, but only admins can create/update/delete.",
+          "params": [
+            {
+              "name": "productId",
+              "description": "The unique identifier of the product."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores orders placed by a specific user.  Path-based ownership ensures only the user can access their orders.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier of the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/payments/{paymentId}",
+        "definition": {
+          "entityName": "Payment",
+          "schema": {
+            "$ref": "#/backend/entities/Payment"
+          },
+          "description": "Stores payment information for a specific user. Path-based ownership ensures only the user can access their payment information.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "paymentId",
+              "description": "The unique identifier of the payment."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/orderTracking/{trackingId}",
+        "definition": {
+          "entityName": "OrderTracking",
+          "schema": {
+            "$ref": "#/backend/entities/OrderTracking"
+          },
+          "description": "Stores order tracking information for a specific user. Path-based ownership ensures only the user can access their order tracking information.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the user."
+            },
+            {
+              "name": "trackingId",
+              "description": "The unique identifier of the order tracking information."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to support Shopora's e-commerce features, focusing on user authentication, product management, order processing, and AI-driven personalization. It prioritizes Authorization Independence, Clarity of Intent, and follows the DBAC (Database-Based Access Control) principle. Path-based ownership is used for user-specific data, while the membership map approach is suitable for collaborative data. To achieve Authorization Independence (CRITICAL), denormalization is employed to avoid `get()` calls in security rules, crucial for atomic operations.\n\n1.  **Users Collection:** Stores user profiles. Access is restricted to the user themselves.\n2.  **Admins Collection:** Stores administrator credentials. Admin status is checked via document existence.\n3.  **Products Collection:** Contains product details. Publicly readable, but only admins can create/update/delete.\n4.  **Users/{userId}/Orders Collection:** Stores orders placed by a specific user. Path-based ownership ensures only the user can access their orders.\n5.  **Users/{userId}/Payments Collection:** Stores payment information for each user. Path-based ownership ensures only the user can access their payments.\n6.  **Users/{userId}/OrderTracking Collection:** Stores order tracking information for each user. Path-based ownership ensures only the user can access their order tracking information.\n7.  **Roles_Admin Collection:** Documents in this collection indicate admin privileges. Existence-based role management simplifies security rules.\n\n**Authorization Independence (Denormalization):**\n*   The design avoids `get()` calls in security rules by structuring data to rely on the `request.auth.uid` for authorization.\n*   For example, in the `/users/{userId}/orders/{orderId}` path, security rules can directly verify if `request.auth.uid == userId` without needing to fetch parent document data.\n\n**QAPs (Rules are not Filters):**\n*   The structure facilitates secure `list` operations.\n*   The segregation of user-owned data under `/users/{userId}` allows listing operations to be secured by simply checking if the requesting user's `uid` matches the `userId` in the path.\n*   Admin role is managed via the `/roles_admin/{uid}` collection which avoids filtering and can be applied to `products` collection."
+  }
+}
