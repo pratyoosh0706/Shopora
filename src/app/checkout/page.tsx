@@ -18,17 +18,19 @@ import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useCart } from '@/hooks/use-cart';
+import Link from 'next/link';
 
 function CheckoutPage() {
   const router = useRouter();
   const { toast } = useToast();
   const { items, total, clearCart, itemCount } = useCart();
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
-  const [isClient, setIsClient] = useState(false)
- 
+  const [isClient, setIsClient] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('card');
+
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -121,7 +123,7 @@ function CheckoutPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <RadioGroup defaultValue="card" className="space-y-4">
+              <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod} className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="card" id="card" />
                   <Label htmlFor="card">Credit/Debit Card</Label>
@@ -135,6 +137,28 @@ function CheckoutPage() {
                   <Label htmlFor="cod">Cash on Delivery</Label>
                 </div>
               </RadioGroup>
+              {paymentMethod === 'card' && (
+                <div className="mt-6 space-y-4 border-t pt-6">
+                   <div className="space-y-2">
+                    <Label htmlFor="card-name">Name on Card</Label>
+                    <Input id="card-name" placeholder="John Doe" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="card-number">Card Number</Label>
+                    <Input id="card-number" placeholder="**** **** **** 1234" required />
+                  </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="expiry-date">Expiry</Label>
+                      <Input id="expiry-date" placeholder="MM/YY" required />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="cvc">CVC</Label>
+                      <Input id="cvc" placeholder="123" required />
+                    </div>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
