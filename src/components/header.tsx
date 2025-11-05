@@ -23,6 +23,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
+import React, { useEffect, useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -109,7 +110,13 @@ function UserNav() {
 }
 
 export function Header() {
-  const { isUserLoading } = useFirebase();
+  const { isUserLoading, user } = useFirebase();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -129,7 +136,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
-          {!isUserLoading && <UserNav />}
+          {isMounted && !isUserLoading && <UserNav />}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
@@ -155,22 +162,22 @@ export function Header() {
                 ))}
               </nav>
               <div className="absolute bottom-4 left-4 right-4">
-                {isUserLoading ? null : (
-                  <div className='w-full'>
-                    <SheetClose asChild>
-                       <Link href="/login" className='w-full'>
-                          <Button variant="outline" className="w-full mb-2">
-                              Sign In
-                          </Button>
-                       </Link>
-                    </SheetClose>
+                {isMounted && !isUserLoading && !user ? (
+                   <div className='w-full'>
                      <SheetClose asChild>
-                       <Link href="/signup" className='w-full'>
-                          <Button className="w-full">Sign Up</Button>
-                       </Link>
-                    </SheetClose>
-                  </div>
-                )}
+                        <Link href="/login" className='w-full'>
+                           <Button variant="outline" className="w-full mb-2">
+                               Sign In
+                           </Button>
+                        </Link>
+                     </SheetClose>
+                      <SheetClose asChild>
+                        <Link href="/signup" className='w-full'>
+                           <Button className="w-full">Sign Up</Button>
+                        </Link>
+                     </SheetClose>
+                   </div>
+                ) : null}
               </div>
             </SheetContent>
           </Sheet>
