@@ -1,3 +1,6 @@
+
+'use client';
+
 import { getProductById, getProducts } from '@/app/actions';
 import { ProductGrid } from '@/components/product-grid';
 import { Badge } from '@/components/ui/badge';
@@ -7,22 +10,61 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { CreditCard, ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
+import { useCart } from '@/hooks/use-cart';
+import type { Product } from '@/lib/types';
+import { useEffect, useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
-export default async function ProductDetailPage({
+export default function ProductDetailPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const product = await getProductById(params.id);
+  const { addItem } = useCart();
+  const { toast } = useToast();
+  const [product, setProduct] = useState<Product | null>(null);
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      setIsLoading(true);
+      const fetchedProduct = await getProductById(params.id);
+      if (!fetchedProduct) {
+        setIsLoading(false);
+        return;
+      }
+      
+      setProduct(fetchedProduct);
+
+      const allProducts = await getProducts();
+      const related = allProducts
+        .filter((p) => p.category === fetchedProduct.category && p.id !== fetchedProduct.id)
+        .slice(0, 4);
+      setRelatedProducts(related);
+      setIsLoading(false);
+    }
+    fetchData();
+  }, [params.id]);
+
+
+  const handleAddToCart = () => {
+    if (product) {
+      addItem(product);
+      toast({
+        title: 'Added to cart',
+        description: `${product.name} has been added to your cart.`,
+      });
+    }
+  };
+
+  if (isLoading) {
+    return <div className="container mx-auto px-4 py-8">Loading...</div>
+  }
   
   if (!product) {
     notFound();
   }
-
-  const allProducts = await getProducts();
-  const relatedProducts = allProducts
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
 
   const formattedPrice = new Intl.NumberFormat('en-IN', {
     style: 'currency',
@@ -63,7 +105,7 @@ export default async function ProductDetailPage({
           <div className="mt-auto pt-8">
             <p className="text-4xl font-bold mb-4">{formattedPrice}</p>
             <div className="flex gap-4">
-              <Button size="lg" className="w-full">
+              <Button size="lg" className="w-full" onClick={handleAddToCart}>
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
               </Button>

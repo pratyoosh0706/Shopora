@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -24,6 +25,8 @@ import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/hooks/use-toast';
 import React, { useEffect, useState } from 'react';
+import { CartSheet } from './cart-sheet';
+import { SearchBar } from './search-bar';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -126,17 +129,18 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-primary flex items-center gap-2"
+              className="transition-colors hover:text-primary"
             >
-              {link.label === 'Track Order' && (
-                <PackageSearch className="h-4 w-4" />
-              )}
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
+           <div className="hidden md:block w-full max-w-xs">
+             <SearchBar />
+           </div>
           {isMounted && !isUserLoading && <UserNav />}
+          {isMounted && <CartSheet />}
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
@@ -146,6 +150,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <Logo className="mb-8" />
+              <div className="mb-4">
+                <SearchBar />
+              </div>
               <nav className="grid gap-6 text-lg font-medium">
                 {navLinks.map((link) => (
                   <SheetClose asChild key={link.href}>

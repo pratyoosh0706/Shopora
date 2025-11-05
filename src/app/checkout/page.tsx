@@ -1,8 +1,7 @@
+
 'use client';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-import { getProductById } from '@/app/actions';
-import type { Product } from '@/lib/types';
 import {
   Card,
   CardContent,
@@ -18,28 +17,18 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import Image from 'next/image';
 import { Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useCart } from '@/hooks/use-cart';
 
 function CheckoutPage() {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const { toast } = useToast();
-  const productId = searchParams.get('productId');
-  const [product, setProduct] = useState<Product | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const { items, total, clearCart, itemCount } = useCart();
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
-
+  const [isClient, setIsClient] = useState(false)
+ 
   useEffect(() => {
-    if (productId) {
-      getProductById(productId).then((p) => {
-        if (p) {
-          setProduct(p);
-        }
-        setIsLoading(false);
-      });
-    } else {
-      setIsLoading(false);
-    }
-  }, [productId]);
+    setIsClient(true)
+  }, [])
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,36 +38,40 @@ function CheckoutPage() {
     
     toast({
       title: "Order Placed!",
-      description: `Your order for ${product?.name} has been placed successfully.`,
+      description: `Your order has been placed successfully.`,
     });
 
     const orderId = `ORD-${Date.now()}`;
+    clearCart();
     router.push(`/order-confirmation?orderId=${orderId}`);
   };
 
-  if (isLoading) {
+  if (!isClient) {
     return (
       <div className="flex justify-center items-center h-64">
         <Loader2 className="h-8 w-8 animate-spin" />
       </div>
     );
   }
-
-  if (!product) {
+  
+  if (itemCount === 0) {
     return (
       <div className="text-center py-16">
-        <h2 className="text-2xl font-bold">Product not found</h2>
+        <h2 className="text-2xl font-bold">Your Cart is Empty</h2>
         <p className="text-muted-foreground">
-          We couldn't find the product you're looking for.
+          Add some products to your cart to proceed to checkout.
         </p>
+        <Link href="/" className='mt-4 inline-block'>
+            <Button>Continue Shopping</Button>
+        </Link>
       </div>
     );
   }
-  
-  const formattedPrice = new Intl.NumberFormat('en-IN', {
+
+  const formattedTotal = new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
-  }).format(product.price);
+  }).format(total);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -151,24 +144,36 @@ function CheckoutPage() {
               <CardTitle>Order Summary</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="w-24 h-24 relative rounded-md overflow-hidden">
-                  <Image
-                    src={product.image.imageUrl}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-semibold">{product.name}</h3>
-                  <p className="text-muted-foreground text-sm">{formattedPrice}</p>
-                </div>
+              <div className="space-y-2">
+                {items.map(item => (
+                  <div key={item.id} className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                       <div className="w-16 h-16 relative rounded-md overflow-hidden">
+                        <Image
+                          src={item.image.imageUrl}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-sm">{item.name}</h3>
+                         <p className="text-muted-foreground text-sm">Qty: {item.quantity}</p>
+                      </div>
+                    </div>
+                    <p className="text-sm font-medium">
+                        {new Intl.NumberFormat('en-IN', {
+                            style: 'currency',
+                            currency: 'INR',
+                        }).format(item.price * item.quantity)}
+                    </p>
+                  </div>
+                ))}
               </div>
                <div className="border-t pt-4 space-y-2">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>{formattedPrice}</span>
+                  <span>{formattedTotal}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping</span>
@@ -176,7 +181,7 @@ function CheckoutPage() {
                 </div>
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>{formattedPrice}</span>
+                  <span>{formattedTotal}</span>
                 </div>
               </div>
             </CardContent>

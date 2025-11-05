@@ -1,3 +1,6 @@
+
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,6 +9,8 @@ import type { Product } from '@/lib/types';
 import { Badge } from './ui/badge';
 import { cn } from '@/lib/utils';
 import { ShoppingCart } from 'lucide-react';
+import { useCart } from '@/hooks/use-cart';
+import { useToast } from '@/hooks/use-toast';
 
 type ProductCardProps = {
   product: Product;
@@ -13,10 +18,22 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product, className }: ProductCardProps) {
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
   const formattedPrice = new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
   }).format(product.price);
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    addItem(product);
+    toast({
+      title: 'Added to cart',
+      description: `${product.name} has been added to your cart.`,
+    });
+  };
 
   return (
     <Card className={cn('flex flex-col overflow-hidden transition-all hover:shadow-lg', className)}>
@@ -41,7 +58,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
       </CardContent>
       <CardFooter className="p-4 flex justify-between items-center">
         <p className="text-lg font-semibold">{formattedPrice}</p>
-        <Button size="sm" variant="default">
+        <Button size="sm" variant="default" onClick={handleAddToCart}>
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
         </Button>
