@@ -16,14 +16,16 @@ const statuses = [
 
 function OrderTrackingPage() {
   const searchParams = useSearchParams();
-  const [orderId, setOrderId] = useState(searchParams.get('orderId') || '');
+  const [orderId, setOrderId] = useState('');
   const [currentStatusIndex, setCurrentStatusIndex] = useState(-1);
   const [isTracking, setIsTracking] = useState(false);
   const [trackedOrderId, setTrackedOrderId] = useState('');
 
   useEffect(() => {
-    if (searchParams.get('orderId')) {
-      handleTrackOrder(searchParams.get('orderId')!);
+    const orderIdFromParams = searchParams.get('orderId');
+    if (orderIdFromParams) {
+        setOrderId(orderIdFromParams);
+        handleTrackOrder(orderIdFromParams);
     }
   }, [searchParams]);
 
@@ -121,7 +123,7 @@ function OrderTrackingPage() {
 
 export default function OrderTrackingPageWrapper() {
   return (
-    <Suspense>
+    <Suspense fallback={<div className="flex justify-center items-center h-64"><Loader2 className="h-8 w-8 animate-spin" /></div>}>
       <OrderTrackingPage />
     </Suspense>
   )
