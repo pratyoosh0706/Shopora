@@ -11,8 +11,10 @@ import { Loader2 } from 'lucide-react';
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     getProducts().then(prods => {
       setProducts(prods);
       setIsLoading(false);
@@ -28,6 +30,14 @@ export default function Home() {
     // For now, we find the button and click it programmatically.
     const chatTrigger = document.querySelector('button[aria-label="Open AI Chat"]') as HTMLButtonElement;
     chatTrigger?.click();
+  }
+
+  if (!isMounted) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
   }
 
   return (
