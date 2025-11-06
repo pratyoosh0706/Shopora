@@ -9,7 +9,7 @@ import {
   SheetClose,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Menu, PackageSearch, User, LogOut } from 'lucide-react';
+import { Menu, PackageSearch, User, LogOut, ShoppingBag } from 'lucide-react';
 import { Logo } from './logo';
 import { useFirebase } from '@/firebase';
 import {
@@ -31,6 +31,7 @@ import { SearchBar } from './search-bar';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/#products', label: 'Products' },
+  { href: '/orders', label: 'My Orders'},
   { href: '/track-order', label: 'Track Order' },
 ];
 
@@ -98,6 +99,10 @@ function UserNav() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={() => router.push('/orders')}>
+          <ShoppingBag className="mr-2 h-4 w-4" />
+          <span>My Orders</span>
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => router.push('/track-order')}>
           <PackageSearch className="mr-2 h-4 w-4" />
           <span>Track Orders</span>
@@ -136,9 +141,11 @@ export function Header() {
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end gap-4">
-           <div className="hidden md:block w-full max-w-xs">
-             <SearchBar />
-           </div>
+           {isMounted && (
+            <div className="hidden md:block w-full max-w-xs">
+              <SearchBar />
+            </div>
+           )}
           {isMounted && !isUserLoading && <UserNav />}
           {isMounted && <CartSheet />}
           <Sheet>
@@ -162,6 +169,9 @@ export function Header() {
                     >
                       {link.label === 'Track Order' && (
                         <PackageSearch className="h-4 w-4" />
+                      )}
+                       {link.label === 'My Orders' && (
+                        <ShoppingBag className="h-4 w-4" />
                       )}
                       {link.label}
                     </Link>

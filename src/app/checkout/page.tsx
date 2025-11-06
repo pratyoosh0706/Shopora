@@ -19,6 +19,9 @@ import { CheckCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useCart } from '@/hooks/use-cart';
 import Link from 'next/link';
+import { useFirebase, useFirestore } from '@/firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+
 
 function CheckoutPage() {
   const router = useRouter();
@@ -29,6 +32,8 @@ function CheckoutPage() {
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [isVerifyingUpi, setIsVerifyingUpi] = useState(false);
   const [isUpiVerified, setIsUpiVerified] = useState(false);
+  const { user } = useFirebase();
+  const firestore = useFirestore();
 
   useEffect(() => {
     setIsClient(true);
@@ -50,6 +55,15 @@ function CheckoutPage() {
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!user || !firestore) {
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: 'You must be logged in to place an order.',
+      });
+      return;
+    }
+
     if (paymentMethod === 'upi' && !isUpiVerified) {
         toast({
             variant: 'destructive',
@@ -60,17 +74,45 @@ function CheckoutPage() {
     }
 
     setIsPlacingOrder(true);
-    // Mock payment processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
     
-    toast({
-      title: "Order Placed!",
-      description: `Your order has been placed successfully.`,
-    });
+    try {
+      // Mock payment processing
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      
+      const orderId = `ORD-${Date.now()}`;
+      
+      // Save order to Firestore
+      const orderPromises = items.map(item => {
+        const orderRef = collection(firestore, 'users', user.uid, 'orders');
+        return addDoc(orderRef, {
+            userId: user.uid,
+            productId: item.id,
+            status: 'Pending',
+            orderDate: new Date().toISOString(),
+            quantity: item.quantity,
+            price: item.price,
+        });
+      });
 
-    const orderId = `ORD-${Date.now()}`;
-    clearCart();
-    router.push(`/order-confirmation?orderId=${orderId}`);
+      await Promise.all(orderPromises);
+
+      toast({
+        title: "Order Placed!",
+        description: `Your order has been placed successfully.`,
+      });
+      
+      clearCart();
+      router.push(`/order-confirmation?orderId=${orderId}`);
+
+    } catch (error) {
+       console.error("Error placing order:", error);
+       toast({
+         variant: "destructive",
+         title: "Order Failed",
+         description: "There was a problem placing your order. Please try again."
+       });
+       setIsPlacingOrder(false);
+    }
   };
 
   if (!isClient) {
@@ -118,13 +160,17 @@ function CheckoutPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="first-name">First Name</Label>
-                    <Input id="first-name" required />
+                    <Input id="first-name" required defaultValue={user?.displayName?.split(' ')[0] ?? ''} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="last-name">Last Name</Label>
-                    <Input id="last-name" required />
+                    <Input id="last-name" required defaultValue={user?.displayName?.split(' ').slice(1).join(' ') ?? ''} />
                   </div>
                 </div>
+                 <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" required defaultValue={user?.email ?? ''} />
+                  </div>
                 <div className="space-y-2">
                   <Label htmlFor="address">Address</Label>
                   <Input id="address" required />
