@@ -1,3 +1,4 @@
+
 'use server';
 
 import { conversationalProductSearch } from '@/ai/flows/conversational-product-search';
@@ -54,7 +55,11 @@ export async function askNova(
   query: string
 ): Promise<{ response: string; error: string | null }> {
   try {
-    const response = await conversationalProductSearch(query);
+    const products = await getProducts();
+    const response = await conversationalProductSearch({
+      query,
+      products: JSON.stringify(products),
+    });
     return { response, error: null };
   } catch (error) {
     console.error('Error with conversational search:', error);

@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview This file defines a Genkit flow for conversational product search.
@@ -16,14 +17,19 @@
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-const ConversationalProductSearchInputSchema = z.string().describe('The user\'s search query.');
+const ConversationalProductSearchInputSchema = z.object({
+  query: z.string().describe("The user's search query."),
+  products: z
+    .string()
+    .describe('A JSON string of all available products.'),
+});
 export type ConversationalProductSearchInput = z.infer<typeof ConversationalProductSearchInputSchema>;
 
 const ConversationalProductSearchOutputSchema = z.string().describe('The AI\'s response with product recommendations.');
 export type ConversationalProductSearchOutput = z.infer<typeof ConversationalProductSearchOutputSchema>;
 
-export async function conversationalProductSearch(query: string): Promise<string> {
-  return conversationalProductSearchFlow(query);
+export async function conversationalProductSearch(input: ConversationalProductSearchInput): Promise<string> {
+  return conversationalProductSearchFlow(input);
 }
 
 const conversationalProductSearchPrompt = ai.definePrompt({
@@ -31,10 +37,14 @@ const conversationalProductSearchPrompt = ai.definePrompt({
   input: {schema: ConversationalProductSearchInputSchema},
   output: {schema: ConversationalProductSearchOutputSchema},
   prompt: `You are Nova, a helpful AI assistant specializing in product recommendations for an e-commerce website.
-  A user is asking you a question about products, and you should respond with relevant product recommendations.
+  A user is asking you a question about products, and you should respond with relevant product recommendations based on the provided product list.
   Be conversational and helpful.
 
-  User query: {{{$input}}}`,
+  User query: {{{query}}}
+  
+  Available Products (JSON):
+  {{{products}}}
+  `,
 });
 
 const conversationalProductSearchFlow = ai.defineFlow(
@@ -43,8 +53,8 @@ const conversationalProductSearchFlow = ai.defineFlow(
     inputSchema: ConversationalProductSearchInputSchema,
     outputSchema: ConversationalProductSearchOutputSchema,
   },
-  async query => {
-    const {text} = await conversationalProductSearchPrompt(query);
+  async (input) => {
+    const {text} = await conversationalProductSearchPrompt(input);
     return text!;
   }
 );
