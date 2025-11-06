@@ -55,11 +55,9 @@ export async function askNova(
   query: string
 ): Promise<{ response: string; error: string | null }> {
   try {
-    const products = await getProducts();
-    const result = await conversationalProductSearch({
-      query,
-      products: JSON.stringify(products),
-    });
+    // The `getProducts` call is removed from here.
+    // The AI flow will now use the `searchProducts` tool to get data as needed.
+    const result = await conversationalProductSearch({ query });
     return { response: result.response, error: null };
   } catch (error) {
     console.error('Error with conversational search:', error);
