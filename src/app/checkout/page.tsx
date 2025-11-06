@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import Image from 'next/image';
-import { Loader2 } from 'lucide-react';
+import { CheckCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useCart } from '@/hooks/use-cart';
 import Link from 'next/link';
@@ -27,6 +27,8 @@ function CheckoutPage() {
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('card');
+  const [isVerifyingUpi, setIsVerifyingUpi] = useState(false);
+  const [isUpiVerified, setIsUpiVerified] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -34,6 +36,15 @@ function CheckoutPage() {
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (paymentMethod === 'upi' && !isUpiVerified) {
+        toast({
+            variant: 'destructive',
+            title: 'Payment not verified',
+            description: 'Please verify your UPI payment before placing the order.',
+        });
+        return;
+    }
+
     setIsPlacingOrder(true);
     // Mock payment processing
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -47,6 +58,17 @@ function CheckoutPage() {
     clearCart();
     router.push(`/order-confirmation?orderId=${orderId}`);
   };
+
+  const handleUpiVerification = async () => {
+    setIsVerifyingUpi(true);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    setIsVerifyingUpi(false);
+    setIsUpiVerified(true);
+  };
+
+  useEffect(() => {
+    setIsUpiVerified(false);
+  }, [paymentMethod]);
 
   if (!isClient) {
     return (
@@ -74,6 +96,8 @@ function CheckoutPage() {
     style: 'currency',
     currency: 'INR',
   }).format(total);
+
+  const canPlaceOrder = isPlacingOrder || (paymentMethod === 'upi' && !isUpiVerified);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -141,22 +165,42 @@ function CheckoutPage() {
                 <div className="mt-6 space-y-4 border-t pt-6">
                    <div className="space-y-2">
                     <Label htmlFor="card-name">Name on Card</Label>
-                    <Input id="card-name" placeholder="John Doe" required />
+                    <Input id="card-name" placeholder="John Doe" required form="checkout-form" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="card-number">Card Number</Label>
-                    <Input id="card-number" placeholder="**** **** **** 1234" required />
+                    <Input id="card-number" placeholder="**** **** **** 1234" required form="checkout-form" />
                   </div>
                   <div className="grid grid-cols-3 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="expiry-date">Expiry</Label>
-                      <Input id="expiry-date" placeholder="MM/YY" required />
+                      <Input id="expiry-date" placeholder="MM/YY" required form="checkout-form" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="cvc">CVC</Label>
-                      <Input id="cvc" placeholder="123" required />
+                      <Input id="cvc" placeholder="123" required form="checkout-form" />
                     </div>
                   </div>
+                </div>
+              )}
+              {paymentMethod === 'upi' && (
+                <div className="mt-6 border-t pt-6 text-center">
+                    <p className='text-muted-foreground text-sm mb-4'>Scan the QR code with your UPI app to pay.</p>
+                    <div className='flex justify-center'>
+                         <Image src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=shopora@mock" alt="UPI QR Code" width={200} height={200} data-ai-hint="qr code" />
+                    </div>
+                    {!isUpiVerified && (
+                        <Button onClick={handleUpiVerification} disabled={isVerifyingUpi} className="mt-4">
+                            {isVerifyingUpi ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                            {isVerifyingUpi ? 'Verifying...' : 'Verify Payment'}
+                        </Button>
+                    )}
+                    {isUpiVerified && (
+                        <div className="mt-4 flex items-center justify-center gap-2 text-green-600 font-semibold">
+                            <CheckCircle className="h-5 w-5" />
+                            <span>Payment Verified</span>
+                        </div>
+                    )}
                 </div>
               )}
             </CardContent>
@@ -210,7 +254,7 @@ function CheckoutPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button type="submit" form="checkout-form" className="w-full" size="lg" disabled={isPlacingOrder}>
+              <Button type="submit" form="checkout-form" className="w-full" size="lg" disabled={canPlaceOrder}>
                 {isPlacingOrder ? (
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 ) : null}
