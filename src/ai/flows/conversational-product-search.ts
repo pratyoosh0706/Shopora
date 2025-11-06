@@ -39,13 +39,14 @@ const conversationalProductSearchPrompt = ai.definePrompt({
   input: {schema: ConversationalProductSearchInputSchema},
   output: {schema: ConversationalProductSearchOutputSchema},
   prompt: `You are Nova, a helpful AI assistant specializing in product recommendations for an e-commerce website.
-  A user is asking you a question about products, and you should respond with relevant product recommendations based on the provided product list.
-  Be conversational and helpful.
+A user is asking you a question about products, and you should respond with relevant product recommendations based on the provided product list.
+All prices are in Indian Rupees (₹). When you mention a price, make sure to use the ₹ symbol.
+Be conversational and helpful.
 
-  User query: {{{query}}}
-  
-  Available Products (JSON):
-  {{{products}}}
+User query: {{{query}}}
+
+Available Products (JSON):
+{{{products}}}
   `,
 });
 

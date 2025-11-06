@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { CreditCard, ShoppingCart, Star } from 'lucide-react';
+import { CreditCard, Loader2, ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
 import { useCart } from '@/hooks/use-cart';
 import type { Product } from '@/lib/types';
@@ -30,18 +30,16 @@ export default function ProductDetailPage({
     async function fetchData() {
       setIsLoading(true);
       const fetchedProduct = await getProductById(id);
-      if (!fetchedProduct) {
-        setIsLoading(false);
-        return;
+      
+      if (fetchedProduct) {
+        setProduct(fetchedProduct);
+        const allProducts = await getProducts();
+        const related = allProducts
+          .filter((p) => p.category === fetchedProduct.category && p.id !== fetchedProduct.id)
+          .slice(0, 4);
+        setRelatedProducts(related);
       }
       
-      setProduct(fetchedProduct);
-
-      const allProducts = await getProducts();
-      const related = allProducts
-        .filter((p) => p.category === fetchedProduct.category && p.id !== fetchedProduct.id)
-        .slice(0, 4);
-      setRelatedProducts(related);
       setIsLoading(false);
     }
     fetchData();
@@ -59,7 +57,11 @@ export default function ProductDetailPage({
   };
 
   if (isLoading) {
-    return <div className="container mx-auto px-4 py-8">Loading...</div>
+    return (
+      <div className="flex justify-center items-center h-[50vh]">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
   }
   
   if (!product) {
