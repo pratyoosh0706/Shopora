@@ -12,11 +12,11 @@ import { CreditCard, Loader2, ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
 import { useCart } from '@/hooks/use-cart';
 import type { Product } from '@/lib/types';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ProductDetailPage({
-  params: { id },
+  params,
 }: {
   params: { id: string };
 }) {
@@ -25,6 +25,10 @@ export default function ProductDetailPage({
   const [product, setProduct] = useState<Product | null>(null);
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Use React.use() to handle the params promise
+  const resolvedParams = use(Promise.resolve(params));
+  const { id } = resolvedParams;
 
   useEffect(() => {
     async function fetchData() {
