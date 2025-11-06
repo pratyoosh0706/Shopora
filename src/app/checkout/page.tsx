@@ -33,18 +33,19 @@ function CheckoutPage() {
   useEffect(() => {
     setIsClient(true);
   }, []);
-  
-  useEffect(() => {
+
+  const handleVerifyUpi = () => {
+    setIsVerifyingUpi(true);
     setIsUpiVerified(false);
-    if (paymentMethod === 'upi') {
-      setIsVerifyingUpi(true);
-      const timer = setTimeout(() => {
-        setIsVerifyingUpi(false);
-        setIsUpiVerified(true);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [paymentMethod]);
+    setTimeout(() => {
+      setIsVerifyingUpi(false);
+      setIsUpiVerified(true);
+      toast({
+        title: 'Payment Verified',
+        description: 'You can now place your order.',
+      });
+    }, 2000);
+  };
 
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +54,7 @@ function CheckoutPage() {
         toast({
             variant: 'destructive',
             title: 'Payment not verified',
-            description: 'Please wait for UPI payment verification to complete.',
+            description: 'Please verify your UPI payment before placing the order.',
         });
         return;
     }
@@ -80,11 +81,11 @@ function CheckoutPage() {
     );
   }
   
-  if (itemCount === 0 && !isPlacingOrder) {
+  if (itemCount === 0) {
     return (
-      <div className="text-center py-16">
+      <div className="text-center py-16 container mx-auto px-4">
         <h2 className="text-2xl font-bold">Your Cart is Empty</h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground mt-2">
           Add some products to your cart to proceed to checkout.
         </p>
         <Link href="/" className='mt-4 inline-block'>
@@ -187,22 +188,28 @@ function CheckoutPage() {
               )}
               {paymentMethod === 'upi' && (
                 <div className="mt-6 border-t pt-6 text-center">
-                    <p className='text-muted-foreground text-sm mb-4'>Scan the QR code with your UPI app to pay.</p>
+                    <p className='text-muted-foreground text-sm mb-4'>Scan the QR code and click verify.</p>
                     <div className='flex justify-center'>
                          <Image src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=shopora@mock" alt="UPI QR Code" width={200} height={200} data-ai-hint="qr code" />
                     </div>
-                    {isVerifyingUpi && (
-                        <div className="mt-4 flex items-center justify-center gap-2 text-muted-foreground font-semibold">
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            <span>Verifying payment...</span>
-                        </div>
-                    )}
-                    {isUpiVerified && (
-                        <div className="mt-4 flex items-center justify-center gap-2 text-green-600 font-semibold">
-                            <CheckCircle className="h-5 w-5" />
-                            <span>Payment Verified</span>
-                        </div>
-                    )}
+                    <div className="mt-4">
+                        {!isUpiVerified && (
+                           <Button onClick={handleVerifyUpi} disabled={isVerifyingUpi} variant="outline">
+                                {isVerifyingUpi ? (
+                                    <>
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        Verifying...
+                                    </>
+                                ) : 'Verify Payment'}
+                           </Button>
+                        )}
+                        {isUpiVerified && (
+                            <div className="flex items-center justify-center gap-2 text-green-600 font-semibold">
+                                <CheckCircle className="h-5 w-5" />
+                                <span>Payment Verified</span>
+                            </div>
+                        )}
+                    </div>
                 </div>
               )}
             </CardContent>
