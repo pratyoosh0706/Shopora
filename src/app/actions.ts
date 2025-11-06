@@ -56,11 +56,11 @@ export async function askNova(
 ): Promise<{ response: string; error: string | null }> {
   try {
     const products = await getProducts();
-    const response = await conversationalProductSearch({
+    const result = await conversationalProductSearch({
       query,
       products: JSON.stringify(products),
     });
-    return { response, error: null };
+    return { response: result.response, error: null };
   } catch (error) {
     console.error('Error with conversational search:', error);
     return {

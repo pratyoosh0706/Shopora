@@ -25,10 +25,12 @@ const ConversationalProductSearchInputSchema = z.object({
 });
 export type ConversationalProductSearchInput = z.infer<typeof ConversationalProductSearchInputSchema>;
 
-const ConversationalProductSearchOutputSchema = z.string().describe('The AI\'s response with product recommendations.');
+const ConversationalProductSearchOutputSchema = z.object({
+    response: z.string().describe("The AI's response with product recommendations."),
+});
 export type ConversationalProductSearchOutput = z.infer<typeof ConversationalProductSearchOutputSchema>;
 
-export async function conversationalProductSearch(input: ConversationalProductSearchInput): Promise<string> {
+export async function conversationalProductSearch(input: ConversationalProductSearchInput): Promise<ConversationalProductSearchOutput> {
   return conversationalProductSearchFlow(input);
 }
 
@@ -54,7 +56,7 @@ const conversationalProductSearchFlow = ai.defineFlow(
     outputSchema: ConversationalProductSearchOutputSchema,
   },
   async (input) => {
-    const {text} = await conversationalProductSearchPrompt(input);
-    return text!;
+    const {output} = await conversationalProductSearchPrompt(input);
+    return output!;
   }
 );
