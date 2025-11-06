@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ProductDetailPage({
-  params,
+  params: { id },
 }: {
   params: { id: string };
 }) {
@@ -29,7 +29,7 @@ export default function ProductDetailPage({
   useEffect(() => {
     async function fetchData() {
       setIsLoading(true);
-      const fetchedProduct = await getProductById(params.id);
+      const fetchedProduct = await getProductById(id);
       if (!fetchedProduct) {
         setIsLoading(false);
         return;
@@ -45,7 +45,7 @@ export default function ProductDetailPage({
       setIsLoading(false);
     }
     fetchData();
-  }, [params.id]);
+  }, [id]);
 
 
   const handleAddToCart = () => {
