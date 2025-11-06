@@ -12,11 +12,9 @@ import { useFirebase } from '@/firebase';
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isMounted, setIsMounted] = useState(false);
-  const { user } = useFirebase();
+  const { user, isUserLoading } = useFirebase();
 
   useEffect(() => {
-    setIsMounted(true);
     getProducts().then((prods) => {
       setProducts(prods);
       setIsLoading(false);
@@ -48,7 +46,7 @@ export default function Home() {
     chatTrigger?.click();
   };
 
-  if (!isMounted) {
+  if (isLoading || isUserLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
         <Loader2 className="h-8 w-8 animate-spin" />
