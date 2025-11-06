@@ -4,11 +4,11 @@
 import { conversationalProductSearch } from '@/ai/flows/conversational-product-search';
 import { products as localProducts } from '@/lib/data';
 import type { Product } from '@/lib/types';
-import { initializeFirebase } from '@/firebase';
+import { initializeServerSideFirebase } from '@/firebase/server-init';
 import { collection, doc, getDoc, getDocs, setDoc } from 'firebase/firestore';
 
 export async function getProducts(): Promise<Product[]> {
-  const { firestore } = initializeFirebase();
+  const { firestore } = initializeServerSideFirebase();
   const productsCollection = collection(firestore, 'products');
   const snapshot = await getDocs(productsCollection);
   if (snapshot.empty) {
@@ -23,7 +23,7 @@ export async function getProducts(): Promise<Product[]> {
 export async function getProductById(
   id: string
 ): Promise<Product | undefined> {
-  const { firestore } = initializeFirebase();
+  const { firestore } = initializeServerSideFirebase();
   const productDoc = doc(firestore, 'products', id);
   const snapshot = await getDoc(productDoc);
   if (snapshot.exists()) {
@@ -34,7 +34,7 @@ export async function getProductById(
 
 async function seedDatabase() {
   console.log('Starting database seed...');
-  const { firestore } = initializeFirebase();
+  const { firestore } = initializeServerSideFirebase();
   const productsCollection = collection(firestore, 'products');
 
   const promises = localProducts.map(async (product) => {
