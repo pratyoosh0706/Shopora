@@ -43,7 +43,7 @@ export default function RootLayout({
           <footer className="bg-gray-100 dark:bg-gray-900">
             <div className="container mx-auto py-6 px-4 md:flex md:items-center md:justify-between">
               <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-                © 2024{' '}
+                © {new Date().getFullYear()}{' '}
                 <Link href="/" className="hover:underline">
                   Shopora™
                 </Link>
