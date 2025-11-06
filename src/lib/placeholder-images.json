@@ -3,502 +3,602 @@
     {
       "id": "product-1",
       "imageUrl": "https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsYXB0b3AlMjBjb21wdXRlcnxlbnwwfHx8fDE3NjIzNTA3NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "laptop computer"
+      "imageHint": "laptop computer",
+      "description": "A high-performance gaming laptop with a powerful graphics card and a high-refresh-rate display."
     },
     {
       "id": "product-2",
       "imageUrl": "https://images.unsplash.com/photo-1732998369893-af4c9a4695fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwZGV2aWNlfGVufDB8fHx8MTc2MjMyOTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "smartphone device"
+      "imageHint": "smartphone device",
+      "description": "The latest flagship smartphone with a stunning pro-grade camera system and an all-day battery life."
     },
     {
       "id": "product-3",
       "imageUrl": "https://images.unsplash.com/photo-1612465289702-7c84b5258fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3aXJlbGVzcyUyMGhlYWRwaG9uZXN8ZW58MHx8fHwxNzYyMjU3OTUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "wireless headphones"
+      "imageHint": "wireless headphones",
+      "description": "Premium noise-cancelling wireless headphones with immersive sound and a comfortable, over-ear design."
     },
     {
       "id": "product-4",
       "imageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzbWFydCUyMHdhdGNofGVufDB8fHx8MTc2MjMxNzk3M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "smart watch"
+      "imageHint": "smart watch",
+      "description": "An advanced smartwatch with comprehensive health tracking, GPS, and a vibrant, always-on display."
     },
     {
       "id": "product-5",
       "imageUrl": "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxnYW1pbmclMjBjb25zb2xlfGVufDB8fHx8MTc2MjI5MjAxNXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "gaming console"
+      "imageHint": "gaming console",
+      "description": "A next-generation gaming console that delivers lightning-fast loading and an all-new generation of games."
     },
     {
       "id": "product-6",
       "imageUrl": "https://images.unsplash.com/photo-1707228773518-7ca0492d0c4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx2ciUyMGhlYWRzZXR8ZW58MHx8fHwxNzYyMjczMDY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vr headset"
+      "imageHint": "vr headset",
+      "description": "An immersive VR headset that transports you to new worlds with stunning visuals and 3D audio."
     },
     {
       "id": "product-7",
       "imageUrl": "https://images.unsplash.com/photo-1521405924368-64c5b84bec60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkcm9uZSUyMGNhbWVyYXxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "drone camera"
+      "imageHint": "drone camera",
+      "description": "A compact camera drone with a 4K sensor, intelligent shooting modes, and a long flight time."
     },
     {
       "id": "product-8",
       "imageUrl": "https://images.unsplash.com/photo-1598034989845-48532781987e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Ymx1ZXRvb3RoJTIwc3BlYWtlcnxlbnwwfHx8fDE3NjIyODY0NjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bluetooth speaker"
+      "imageHint": "bluetooth speaker",
+      "description": "A portable Bluetooth speaker that delivers powerful sound and deep bass in a compact, waterproof design."
     },
     {
       "id": "product-9",
       "imageUrl": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkaWdpdGFsJTIwY2FtZXJhfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "digital camera"
+      "imageHint": "digital camera",
+      "description": "A professional-grade digital camera with a full-frame sensor and interchangeable lenses for stunning photos."
     },
     {
       "id": "product-10",
       "imageUrl": "https://images.unsplash.com/photo-1641630376356-fb9e646b0ea4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlLXJlYWRlciUyMHRhYmxldHxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "e-reader tablet"
+      "imageHint": "e-reader tablet",
+      "description": "A lightweight e-reader tablet with a glare-free display that reads like real paper, even in direct sunlight."
     },
     {
       "id": "product-11",
       "imageUrl": "https://images.unsplash.com/photo-1692246427944-11fc28ede39e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxrZXlib2FyZCUyMG1vdXNlfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "keyboard mouse"
+      "imageHint": "keyboard mouse",
+      "description": "A responsive mechanical keyboard with customizable RGB lighting, perfect for gaming and productivity."
     },
     {
       "id": "product-12",
       "imageUrl": "https://images.unsplash.com/photo-1675151638960-fc1513f8021e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8NGslMjBtb25pdG9yfGVufDB8fHx8MTc2MjM1MjU0NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "4k monitor"
+      "imageHint": "4k monitor",
+      "description": "A stunning 27-inch 4K monitor with incredible color accuracy and a sleek, modern design."
     },
     {
       "id": "product-13",
       "imageUrl": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxncmFwaGljcyUyMGNhcmR8ZW58MHx8fHwxNzYyMzM4NTM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "graphics card"
+      "imageHint": "graphics card",
+      "description": "A top-of-the-line graphics card designed for 4K gaming and demanding creative workloads."
     },
     {
       "id": "product-14",
       "imageUrl": "https://images.unsplash.com/photo-1606231495909-73c86d43ed0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxleHRlcm5hbCUyMGhhcmRkcml2ZXxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "external harddrive"
+      "imageHint": "external harddrive",
+      "description": "A fast and reliable external SSD with 2TB of storage, perfect for backups and transferring large files."
     },
     {
       "id": "product-15",
       "imageUrl": "https://images.unsplash.com/photo-1752652012935-e490eb25bf32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWJjYW0lMjB2aWRlb3xlbnwwfHx8fDE3NjIzNDY2Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "webcam video"
+      "imageHint": "webcam video",
+      "description": "A 1080p webcam with a built-in ring light and microphone for crystal-clear video calls."
     },
     {
       "id": "product-16",
       "imageUrl": "https://images.unsplash.com/photo-1657121576152-d492866543a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtaWNyb3Bob25lJTIwYXVkaW98ZW58MHx8fHwxNzYyMzU1Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "microphone audio"
+      "imageHint": "microphone audio",
+      "description": "A studio-quality USB microphone that captures rich, detailed audio for streaming and recording."
     },
     {
       "id": "product-17",
       "imageUrl": "https://images.unsplash.com/photo-1688678004647-945d5aaf91c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9qZWN0b3IlMjBzY3JlZW58ZW58MHx8fHwxNzYyMjYxODYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "projector screen"
+      "imageHint": "projector screen",
+      "description": "A compact and bright projector that creates a 100-inch screen for a cinematic home theater experience."
     },
     {
       "id": "product-18",
       "imageUrl": "https://images.unsplash.com/photo-1665860455423-166cab57c383?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmaXRuZXNzJTIwdHJhY2tlcnxlbnwwfHx8fDE3NjIzNTA3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fitness tracker"
+      "imageHint": "fitness tracker",
+      "description": "A sleek fitness tracker that monitors your activity, sleep, and heart rate to help you stay healthy."
     },
     {
       "id": "product-19",
       "imageUrl": "https://images.unsplash.com/photo-1757478558372-43c94b3268bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyb2JvdCUyMHZhY3V1bXxlbnwwfHx8fDE3NjIzMzk1ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "robot vacuum"
+      "imageHint": "robot vacuum",
+      "description": "An intelligent robot vacuum with smart mapping that automatically cleans your floors."
     },
     {
       "id": "product-20",
       "imageUrl": "https://images.unsplash.com/photo-1713857297379-6fc26e70f581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbWFydCUyMGxpZ2h0aW5nfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "smart lighting"
+      "imageHint": "smart lighting",
+      "description": "A smart lighting kit with color-changing bulbs that you can control with your voice or an app."
     },
     {
       "id": "product-21",
       "imageUrl": "https://images.unsplash.com/photo-1608147152875-b0eb0c53d491?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZW5pbSUyMGphY2tldHxlbnwwfHx8fDE3NjIzNTM2NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "denim jacket"
+      "imageHint": "denim jacket",
+      "description": "A classic denim jacket made from high-quality materials, perfect for any casual occasion."
     },
     {
       "id": "product-22",
       "imageUrl": "https://images.unsplash.com/photo-1638158980051-f7e67291efed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWF0aGVyJTIwYm9vdHN8ZW58MHx8fHwxNzYyMjc5NDc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "leather boots"
+      "imageHint": "leather boots",
+      "description": "Handcrafted leather boots that are durable, stylish, and comfortable for all-day wear."
     },
     {
       "id": "product-23",
       "imageUrl": "https://images.unsplash.com/photo-1676113421579-55b8d5c73225?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0LXNoaXJ0JTIwZ3JhcGhpY3xlbnwwfHx8fDE3NjIyODMwMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "t-shirt graphic"
+      "imageHint": "t-shirt graphic",
+      "description": "A soft cotton graphic t-shirt with a unique, eye-catching design."
     },
     {
       "id": "product-24",
       "imageUrl": "https://images.unsplash.com/photo-1739138053507-0f312a938451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbmVha2VycyUyMHJ1bm5pbmd8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sneakers running"
+      "imageHint": "sneakers running",
+      "description": "Lightweight and responsive running sneakers designed for maximum comfort and performance."
     },
     {
       "id": "product-25",
       "imageUrl": "https://images.unsplash.com/photo-1599119282057-6f310c399de5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkcmVzcyUyMGZsb3JhbHxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dress floral"
+      "imageHint": "dress floral",
+      "description": "A beautiful floral summer dress made from breathable fabric, perfect for warm weather."
     },
     {
       "id": "product-26",
       "imageUrl": "https://images.unsplash.com/photo-1726602911327-ceda48b7b6b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdW5nbGFzc2VzJTIwYXZpYXRvcnxlbnwwfHx8fDE3NjIzNDg3OTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sunglasses aviator"
+      "imageHint": "sunglasses aviator",
+      "description": "Classic aviator sunglasses with polarized lenses to protect your eyes in style."
     },
     {
       "id": "product-27",
       "imageUrl": "https://images.unsplash.com/photo-1689844496310-b261f7602bc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGFuZGJhZyUyMGxlYXRoZXJ8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "handbag leather"
+      "imageHint": "handbag leather",
+      "description": "An elegant designer handbag made from genuine leather, with multiple compartments for organization."
     },
     {
       "id": "product-28",
       "imageUrl": "https://images.unsplash.com/photo-1678801868975-32786ae5aeeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b29sJTIwc2NhcmZ8ZW58MHx8fHwxNzYyMzM3ODEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "wool scarf"
+      "imageHint": "wool scarf",
+      "description": "A cozy wool scarf that is perfect for keeping warm during the cold winter months."
     },
     {
       "id": "product-29",
       "imageUrl": "https://images.unsplash.com/photo-1760328249114-9010f6065b33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb3JtYWwlMjBzdWl0fGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "formal suit"
+      "imageHint": "formal suit",
+      "description": "A modern, slim-fit business suit tailored for a sharp and professional look."
     },
     {
       "id": "product-30",
       "imageUrl": "https://images.unsplash.com/photo-1661818302487-467621dd1c19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGlubyUyMHBhbnRzfGVufDB8fHx8MTc2MjMxNDYzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chino pants"
+      "imageHint": "chino pants",
+      "description": "Versatile slim-fit chinos that can be dressed up or down for any occasion."
     },
     {
       "id": "product-31",
       "imageUrl": "https://images.unsplash.com/photo-1662787271649-8843cc38454a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3aW50ZXIlMjBjb2F0fGVufDB8fHx8MTc2MjMyMjc3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "winter coat"
+      "imageHint": "winter coat",
+      "description": "A stylish and warm trench coat, perfect for layering during the colder seasons."
     },
     {
       "id": "product-32",
       "imageUrl": "https://images.unsplash.com/photo-1633966526541-c167d8858c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiZWFuaWUlMjBoYXR8ZW58MHx8fHwxNzYyMjc4MzIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "beanie hat"
+      "imageHint": "beanie hat",
+      "description": "A soft and warm knit beanie to keep you cozy and stylish in the winter."
     },
     {
       "id": "product-33",
       "imageUrl": "https://images.unsplash.com/photo-1694243382431-90d1934d6c3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaWxrJTIwYmxvdXNlfGVufDB8fHx8MTc2MjM1MTY3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "silk blouse"
+      "imageHint": "silk blouse",
+      "description": "An elegant silk blouse with a beautiful drape, suitable for both work and evening wear."
     },
     {
       "id": "product-34",
       "imageUrl": "https://images.unsplash.com/photo-1552583537-7f728c1721bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzd2ltc3VpdCUyMGJpa2luaXxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "swimsuit bikini"
+      "imageHint": "swimsuit bikini",
+      "description": "A flattering one-piece swimsuit with a modern design, perfect for the beach or pool."
     },
     {
       "id": "product-35",
       "imageUrl": "https://images.unsplash.com/photo-1618355281911-84e6ec751d84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhdGhsZXRpYyUyMGxlZ2dpbmdzfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "athletic leggings"
+      "imageHint": "athletic leggings",
+      "description": "High-waisted yoga leggings made from a stretchy, moisture-wicking fabric for maximum comfort."
     },
     {
       "id": "product-36",
       "imageUrl": "https://images.unsplash.com/photo-1621027212913-da785ebe2bcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxob29kaWUlMjBzd2VhdHNoaXJ0fGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "hoodie sweatshirt"
+      "imageHint": "hoodie sweatshirt",
+      "description": "A comfortable cotton hoodie that is perfect for lounging or casual outings."
     },
     {
       "id": "product-37",
       "imageUrl": "https://images.unsplash.com/photo-1732708862549-714f7478ca31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzYW5kYWxzJTIwc3VtbWVyfGVufDB8fHx8MTc2MjM0NTY0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sandals summer"
+      "imageHint": "sandals summer",
+      "description": "Stylish and comfortable beach sandals that are perfect for your next vacation."
     },
     {
       "id": "product-38",
       "imageUrl": "https://images.unsplash.com/photo-1750492272603-43888a3fee4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxqZXdlbHJ5JTIwbmVja2xhY2V8ZW58MHx8fHwxNzYyMjc4MzAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "jewelry necklace"
+      "imageHint": "jewelry necklace",
+      "description": "A delicate silver necklace with a minimalist design, perfect for everyday wear."
     },
     {
       "id": "product-39",
       "imageUrl": "https://images.unsplash.com/photo-1705493655920-20c572928501?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxiZWx0JTIwbGVhdGhlcnxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "belt leather"
+      "imageHint": "belt leather",
+      "description": "A classic leather belt that adds a finishing touch to any outfit."
     },
     {
       "id": "product-40",
       "imageUrl": "https://images.unsplash.com/photo-1698586252650-f0d15ff0c8da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzb2NrcyUyMHBhY2t8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "socks pack"
+      "imageHint": "socks pack",
+      "description": "A pack of comfortable and breathable ankle socks for everyday use."
     },
     {
       "id": "product-41",
       "imageUrl": "https://images.unsplash.com/photo-1627627256672-027a4613d028?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwYmFsbHxlbnwwfHx8fDE3NjIzNTA3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "basketball ball"
+      "imageHint": "basketball ball",
+      "description": "A regulation-size basketball with excellent grip, suitable for indoor and outdoor courts."
     },
     {
       "id": "product-42",
       "imageUrl": "https://images.unsplash.com/photo-1621886178958-be42369fc9e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx5b2dhJTIwbWF0fGVufDB8fHx8MTc2MjM0NDk1OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "yoga mat"
+      "imageHint": "yoga mat",
+      "description": "A non-slip yoga mat that provides extra cushioning for your joints during practice."
     },
     {
       "id": "product-43",
       "imageUrl": "https://images.unsplash.com/photo-1557330359-ffb0deed6163?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZHVtYmJlbGxzJTIwd2VpZ2h0c3xlbnwwfHx8fDE3NjIzNDg1MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dumbbells weights"
+      "imageHint": "dumbbells weights",
+      "description": "A versatile dumbbell set with adjustable weights, perfect for a home gym."
     },
     {
       "id": "product-44",
       "imageUrl": "https://images.unsplash.com/photo-1614632537190-23e4146777db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzb2NjZXIlMjBiYWxsfGVufDB8fHx8MTc2MjI1NTE0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "soccer ball"
+      "imageHint": "soccer ball",
+      "description": "A durable soccer ball designed for optimal performance on both grass and turf fields."
     },
     {
       "id": "product-45",
       "imageUrl": "https://images.unsplash.com/photo-1615731446707-6ad24074bdd5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZW5uaXMlMjByYWNrZXR8ZW58MHx8fHwxNzYyMzI1OTE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "tennis racket"
+      "imageHint": "tennis racket",
+      "description": "A lightweight tennis racket that offers a great blend of power and control."
     },
     {
       "id": "product-46",
       "imageUrl": "https://images.unsplash.com/photo-1699389359819-a15065340f7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiaWN5Y2xlJTIwbW91bnRhaW58ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bicycle mountain"
+      "imageHint": "bicycle mountain",
+      "description": "A rugged mountain bike with front suspension and disc brakes, built for tough trails."
     },
     {
       "id": "product-47",
       "imageUrl": "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxydW5uaW5nJTIwc2hvZXN8ZW58MHx8fHwxNzYyMjk3NjE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "running shoes"
+      "imageHint": "running shoes",
+      "description": "High-performance trail running shoes with excellent grip and cushioning for any terrain."
     },
     {
       "id": "product-48",
       "imageUrl": "https://images.unsplash.com/photo-1595827432953-7161e19e303e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxnb2xmJTIwY2x1YnN8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "golf clubs"
+      "imageHint": "golf clubs",
+      "description": "A complete golf club set with a driver, irons, putter, and a stylish stand bag."
     },
     {
       "id": "product-49",
       "imageUrl": "https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib3hpbmclMjBnbG92ZXN8ZW58MHx8fHwxNzYyMjY5Mjc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "boxing gloves"
+      "imageHint": "boxing gloves",
+      "description": "Durable boxing gloves designed for training, providing excellent hand and wrist protection."
     },
     {
       "id": "product-50",
       "imageUrl": "https://images.unsplash.com/photo-1584302052177-2e90841dad6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxza2F0ZWJvYXJkJTIwZGVja3xlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "skateboard deck"
+      "imageHint": "skateboard deck",
+      "description": "A professional-quality skateboard with a durable deck and smooth-rolling wheels."
     },
     {
       "id": "product-51",
       "imageUrl": "https://images.unsplash.com/photo-1529230117010-b6c436154f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXNoaW5nJTIwcm9kfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fishing rod"
+      "imageHint": "fishing rod",
+      "description": "A lightweight and sensitive fishing rod, perfect for catching a variety of freshwater fish."
     },
     {
       "id": "product-52",
       "imageUrl": "https://images.unsplash.com/photo-1593001403407-3debce9fc9ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxrYXlhayUyMGJvYXR8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "kayak boat"
+      "imageHint": "kayak boat",
+      "description": "A stable and easy-to-maneuver kayak, ideal for recreational paddling on lakes and rivers."
     },
     {
       "id": "product-53",
       "imageUrl": "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYW1waW5nJTIwdGVudHxlbnwwfHx8fDE3NjIzNDE1NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "camping tent"
+      "imageHint": "camping tent",
+      "description": "A spacious and waterproof camping tent that is easy to set up for your next outdoor adventure."
     },
     {
       "id": "product-54",
       "imageUrl": "https://images.unsplash.com/photo-1592388748465-8c4dca8dd703?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxoaWtpbmclMjBiYWNrcGFja3xlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "hiking backpack"
+      "imageHint": "hiking backpack",
+      "description": "A comfortable and durable hiking backpack with plenty of storage for all your gear."
     },
     {
       "id": "product-55",
       "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3YXRlciUyMGJvdHRsZXxlbnwwfHx8fDE3NjIzNDI0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "water bottle"
+      "imageHint": "water bottle",
+      "description": "An insulated water bottle that keeps your drinks cold for 24 hours or hot for 12 hours."
     },
     {
       "id": "product-56",
       "imageUrl": "https://images.unsplash.com/photo-1632512404263-7f22b6759908?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzd2ltJTIwZ29nZ2xlc3xlbnwwfHx8fDE3NjIzNTA3Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "swim goggles"
+      "imageHint": "swim goggles",
+      "description": "Anti-fog swim goggles with a comfortable seal and a wide field of vision."
     },
     {
       "id": "product-57",
       "imageUrl": "https://images.unsplash.com/photo-1624375664562-fff61869fe8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxiYXNlYmFsbCUyMGJhdHxlbnwwfHx8fDE3NjIzMDgzNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "baseball bat"
+      "imageHint": "baseball bat",
+      "description": "A high-performance baseball bat with a large sweet spot for maximum power."
     },
     {
       "id": "product-58",
       "imageUrl": "https://images.unsplash.com/photo-1612132983871-6d00ff82870d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmb290YmFsbCUyMGhlbG1ldHxlbnwwfHx8fDE3NjIzNTU3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "football helmet"
+      "imageHint": "football helmet",
+      "description": "A protective cycling helmet with enhanced ventilation and an adjustable fit system."
     },
     {
       "id": "product-59",
       "imageUrl": "https://images.unsplash.com/photo-1742272108735-2403a49b8f4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzcG9ydHMlMjBqZXJzZXl8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sports jersey"
+      "imageHint": "sports jersey",
+      "description": "An authentic sports jersey from your favorite team, made from lightweight, breathable fabric."
     },
     {
       "id": "product-60",
       "imageUrl": "https://images.unsplash.com/photo-1516876345887-6dd74f80787a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqdW1wJTIwcm9wZXxlbnwwfHx8fDE3NjIzNTQyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "jump rope"
+      "imageHint": "jump rope",
+      "description": "An adjustable jump rope with comfortable handles, perfect for a cardio workout."
     },
     {
       "id": "product-61",
       "imageUrl": "https://images.unsplash.com/photo-1759722668253-1767030ad9b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzb2ZhJTIwY291Y2h8ZW58MHx8fHwxNzYyMzU1Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sofa couch"
+      "imageHint": "sofa couch",
+      "description": "A luxurious velvet sofa with a comfortable, modern design, perfect for any living room."
     },
     {
       "id": "product-62",
       "imageUrl": "https://images.unsplash.com/photo-1542372147193-a7aca54189cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjB0YWJsZXxlbnwwfHx8fDE3NjIzMTE4NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "coffee table"
+      "imageHint": "coffee table",
+      "description": "A stylish modern coffee table with a sleek design and ample storage space."
     },
     {
       "id": "product-63",
       "imageUrl": "https://images.unsplash.com/photo-1568305427839-b16e35fe0072?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiZWQlMjBmcmFtZXxlbnwwfHx8fDE3NjIzNDMzMzZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bed frame"
+      "imageHint": "bed frame",
+      "description": "A sturdy upholstered bed frame that adds a touch of elegance to any bedroom."
     },
     {
       "id": "product-64",
       "imageUrl": "https://images.unsplash.com/photo-1602872030490-4a484a7b3ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGluaW5nJTIwdGFibGV8ZW58MHx8fHwxNzYyMjU1MzY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dining table"
+      "imageHint": "dining table",
+      "description": "A spacious dining table that comfortably seats six, perfect for family meals and gatherings."
     },
     {
       "id": "product-65",
       "imageUrl": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvZmZpY2UlMjBjaGFpcnxlbnwwfHx8fDE3NjIyODk1Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "office chair"
+      "imageHint": "office chair",
+      "description": "An ergonomic office chair with adjustable lumbar support for all-day comfort."
     },
     {
       "id": "product-66",
       "imageUrl": "https://images.unsplash.com/photo-1752606301767-e5aafa57fef0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxib29rc2hlbGYlMjBzdG9yYWdlfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "bookshelf storage"
+      "imageHint": "bookshelf storage",
+      "description": "A modern bookshelf with ample storage space for books, decor, and more."
     },
     {
       "id": "product-67",
       "imageUrl": "https://images.unsplash.com/photo-1513694203232-719a280e022f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmbG9vciUyMGxhbXB8ZW58MHx8fHwxNzYyMzQ2Mzg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "floor lamp"
+      "imageHint": "floor lamp",
+      "description": "A sleek arc floor lamp that provides warm, ambient lighting for any room."
     },
     {
       "id": "product-68",
       "imageUrl": "https://images.unsplash.com/photo-1608724552874-cd6b9b751f92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhcmVhJTIwcnVnfGVufDB8fHx8MTc2MjI4ODEyOXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "area rug"
+      "imageHint": "area rug",
+      "description": "A soft and stylish area rug that adds warmth and texture to your living space."
     },
     {
       "id": "product-69",
       "imageUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3YWxsJTIwYXJ0fGVufDB8fHx8MTc2MjI3MjQzOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "wall art"
+      "imageHint": "wall art",
+      "description": "A beautiful piece of abstract wall art to elevate your home decor."
     },
     {
       "id": "product-70",
       "imageUrl": "https://images.unsplash.com/photo-1747494750414-69c45f530374?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0aHJvdyUyMHBpbGxvd3N8ZW58MHx8fHwxNzYyMzU1Nzk2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "throw pillows"
+      "imageHint": "throw pillows",
+      "description": "A set of plush throw pillows to add comfort and style to your sofa or bed."
     },
     {
       "id": "product-71",
       "imageUrl": "https://images.unsplash.com/photo-1564940735784-b15466e8dc09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxraXRjaGVuJTIwbWl4ZXJ8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "kitchen mixer"
+      "imageHint": "kitchen mixer",
+      "description": "A powerful stand mixer that makes baking and cooking a breeze."
     },
     {
       "id": "product-72",
       "imageUrl": "https://images.unsplash.com/photo-1545936055-22b27770efca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2ZmZWUlMjBtYWtlcnxlbnwwfHx8fDE3NjIyODYyMzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "coffee maker"
+      "imageHint": "coffee maker",
+      "description": "A programmable coffee maker that brews a perfect cup of coffee every time."
     },
     {
       "id": "product-73",
       "imageUrl": "https://images.unsplash.com/photo-1667506490137-7edcb1993297?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxibGVuZGVyJTIwbWFjaGluZXxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "blender machine"
+      "imageHint": "blender machine",
+      "description": "A high-speed blender that can handle everything from smoothies to hot soups."
     },
     {
       "id": "product-74",
       "imageUrl": "https://images.unsplash.com/photo-1584990347784-da6aaa2a4bbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb29rd2FyZSUyMHNldHxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cookware set"
+      "imageHint": "cookware set",
+      "description": "A durable and non-stick cookware set that includes everything you need for your kitchen."
     },
     {
       "id": "product-75",
       "imageUrl": "https://images.unsplash.com/photo-1593618998160-e34014e67546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxrbmlmZSUyMHNldHxlbnwwfHx8fDE3NjIzMDcwMDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "knife set"
+      "imageHint": "knife set",
+      "description": "A professional knife set with high-carbon stainless steel blades for precision cutting."
     },
     {
       "id": "product-76",
       "imageUrl": "https://images.unsplash.com/photo-1690642109567-940e7fc2cd5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhaXIlMjBmcnllcnxlbnwwfHx8fDE3NjIyNzE2MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "air fryer"
+      "imageHint": "air fryer",
+      "description": "A versatile air fryer that lets you cook your favorite foods with little to no oil."
     },
     {
       "id": "product-77",
       "imageUrl": "https://images.unsplash.com/photo-1718939045285-b67f9e9f9f8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0b3dlbCUyMHNldHxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "towel set"
+      "imageHint": "towel set",
+      "description": "A luxurious and absorbent towel set made from 100% cotton."
     },
     {
       "id": "product-78",
       "imageUrl": "https://images.unsplash.com/photo-1567500284069-9c0400b02032?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsYXVuZHJ5JTIwYmFza2V0fGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "laundry basket"
+      "imageHint": "laundry basket",
+      "description": "A stylish and functional laundry basket that makes laundry day a little easier."
     },
     {
       "id": "product-79",
       "imageUrl": "https://images.unsplash.com/photo-1758611195875-e8261c35a9aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdG9yYWdlJTIwYmluc3xlbnwwfHx8fDE3NjIzNTU3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "storage bins"
+      "imageHint": "storage bins",
+      "description": "A set of versatile storage bins to help you organize any room in your home."
     },
     {
       "id": "product-80",
       "imageUrl": "https://images.unsplash.com/photo-1563419837758-e48ef1b731dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwbGFudCUyMHBvdHxlbnwwfHx8fDE3NjIyNjU0NzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "plant pot"
+      "imageHint": "plant pot",
+      "description": "A beautiful ceramic plant pot that will complement any indoor plant."
     },
     {
       "id": "product-81",
       "imageUrl": "https://images.unsplash.com/photo-1711185900806-bf85e7fe7767?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYW50YXN5JTIwbm92ZWx8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fantasy novel"
+      "imageHint": "fantasy novel",
+      "description": "An epic fantasy novel that will transport you to a world of magic and adventure."
     },
     {
       "id": "product-82",
       "imageUrl": "https://images.unsplash.com/photo-1656266724419-333cd2502487?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxiaW9ncmFwaHklMjBib29rfGVufDB8fHx8MTc2MjMyNTIzMHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "biography book"
+      "imageHint": "biography book",
+      "description": "An inspiring biography that tells the story of a remarkable individual's life."
     },
     {
       "id": "product-83",
       "imageUrl": "https://images.unsplash.com/photo-1633266841047-719b5f737149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxteXN0ZXJ5JTIwdGhyaWxsZXJ8ZW58MHx8fHwxNzYyMjYyNzE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mystery thriller"
+      "imageHint": "mystery thriller",
+      "description": "A gripping mystery thriller that will keep you on the edge of your seat until the very end."
     },
     {
       "id": "product-84",
       "imageUrl": "https://images.unsplash.com/photo-1705088295611-73c993f4705a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb29rYm9vayUyMHJlY2lwZXxlbnwwfHx8fDE3NjIyOTc1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cookbook recipe"
+      "imageHint": "cookbook recipe",
+      "description": "A beautiful cookbook filled with delicious and easy-to-follow recipes for every occasion."
     },
     {
       "id": "product-85",
       "imageUrl": "https://images.unsplash.com/photo-1472173148041-00294f0814a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoaXN0b3J5JTIwYm9va3xlbnwwfHx8fDE3NjIzNDk4ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "history book"
+      "imageHint": "history book",
+      "description": "A fascinating history book that explores a pivotal moment in the past."
     },
     {
       "id": "product-86",
       "imageUrl": "https://images.unsplash.com/photo-1672236959779-1a1dcf0b0ab6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2NpZW5jZSUyMGZpY3Rpb258ZW58MHx8fHwxNzYyMzE0NzQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "science fiction"
+      "imageHint": "science fiction",
+      "description": "A mind-bending science fiction novel that explores the possibilities of the future."
     },
     {
       "id": "product-87",
       "imageUrl": "https://images.unsplash.com/photo-1665658718717-410db81df4cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzZWxmLWhlbHAlMjBib29rfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "self-help book"
+      "imageHint": "self-help book",
+      "description": "A practical self-help book that provides actionable advice for personal growth."
     },
     {
       "id": "product-88",
       "imageUrl": "https://images.unsplash.com/photo-1601255596523-1ded45951ed4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2hpbGRyZW5zJTIwYm9va3xlbnwwfHx8fDE3NjIzMjkxMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "childrens book"
+      "imageHint": "childrens book",
+      "description": "A charming children's book with beautiful illustrations and a heartwarming story."
     },
     {
       "id": "product-89",
       "imageUrl": "https://images.unsplash.com/photo-1718975592728-7b594fb035b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb2V0cnklMjBjb2xsZWN0aW9ufGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "poetry collection"
+      "imageHint": "poetry collection",
+      "description": "A powerful collection of poetry that explores themes of love, loss, and life."
     },
     {
       "id": "product-90",
       "imageUrl": "https://images.unsplash.com/photo-1516546453174-5e1098a4b4af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmF2ZWwlMjBndWlkZXxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "travel guide"
+      "imageHint": "travel guide",
+      "description": "A comprehensive travel guide to help you plan your next adventure."
     },
     {
       "id": "product-91",
       "imageUrl": "https://images.unsplash.com/photo-1752243751485-28462bdee57a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxncmFwaGljJTIwbm92ZWx8ZW58MHx8fHwxNzYyMzU1MzM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "graphic novel"
+      "imageHint": "graphic novel",
+      "description": "A visually stunning graphic novel with a compelling and original story."
     },
     {
       "id": "product-92",
       "imageUrl": "https://images.unsplash.com/photo-1650735310293-307be67b3236?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxidXNpbmVzcyUyMGJvb2t8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "business book"
+      "imageHint": "business book",
+      "description": "An insightful business book that offers valuable lessons on leadership and strategy."
     },
     {
       "id": "product-93",
       "imageUrl": "https://images.unsplash.com/photo-1684251801911-cbaa42787b9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyb21hbmNlJTIwbm92ZWx8ZW58MHx8fHwxNzYyMjYyNzE3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "romance novel"
+      "imageHint": "romance novel",
+      "description": "A heartwarming romance novel that will make you believe in love."
     },
     {
       "id": "product-94",
       "imageUrl": "https://images.unsplash.com/photo-1542641806058-922fa0dae86b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhcnQlMjBib29rfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "art book"
+      "imageHint": "art book",
+      "description": "A beautiful art book showcasing the works of a renowned artist."
     },
     {
       "id": "product-95",
       "imageUrl": "https://images.unsplash.com/photo-1760079360839-216fdc599ceb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaGlsb3NvcGh5JTIwdGV4dHxlbnwwfHx8fDE3NjIzNTU3OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "philosophy text"
+      "imageHint": "philosophy text",
+      "description": "A thought-provoking philosophy book that explores the big questions of life."
     },
     {
       "id": "product-96",
       "imageUrl": "https://images.unsplash.com/photo-1718353097583-8ca64c8f7c94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9ncmFtbWluZyUyMGJvb2t8ZW58MHx8fHwxNzYyMjcxMzAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "programming book"
+      "imageHint": "programming book",
+      "description": "A comprehensive programming guide that will teach you how to code from scratch."
     },
     {
       "id": "product-97",
       "imageUrl": "https://images.unsplash.com/photo-1721806744159-3eb6f39aa54a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnYXJkZW5pbmclMjBib29rfGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "gardening book"
+      "imageHint": "gardening book",
+      "description": "A helpful gardening book with tips and tricks for creating a beautiful garden."
     },
     {
       "id": "product-98",
       "imageUrl": "https://images.unsplash.com/photo-1657846446395-20264aaa9219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZW1vaXIlMjBhdXRvYmlvZ3JhcGh5fGVufDB8fHx8MTc2MjM1NTc5NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "memoir autobiography"
+      "imageHint": "memoir autobiography",
+      "description": "A captivating memoir that offers a glimpse into the author's fascinating life."
     },
     {
       "id": "product-99",
       "imageUrl": "https://images.unsplash.com/photo-1716690356614-f69f041932b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkeXN0b3BpYW4lMjBub3ZlbHxlbnwwfHx8fDE3NjIzNTU3OTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dystopian novel"
+      "imageHint": "dystopian novel",
+      "description": "A chilling dystopian novel that explores a dark and unsettling future."
     },
     {
       "id": "product-100",
       "imageUrl": "https://images.unsplash.com/photo-1520874980933-927e354df1a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0cnVlJTIwY3JpbWV8ZW58MHx8fHwxNzYyMzU1Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "true crime"
+      "imageHint": "true crime",
+      "description": "A gripping true crime book that investigates a shocking and mysterious case."
     }
   ]
 }
