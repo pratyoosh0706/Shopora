@@ -33,6 +33,19 @@ function CheckoutPage() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+  
+  useEffect(() => {
+    setIsUpiVerified(false);
+    if (paymentMethod === 'upi') {
+      setIsVerifyingUpi(true);
+      const timer = setTimeout(() => {
+        setIsVerifyingUpi(false);
+        setIsUpiVerified(true);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [paymentMethod]);
+
 
   const handlePlaceOrder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,7 +53,7 @@ function CheckoutPage() {
         toast({
             variant: 'destructive',
             title: 'Payment not verified',
-            description: 'Please verify your UPI payment before placing the order.',
+            description: 'Please wait for UPI payment verification to complete.',
         });
         return;
     }
@@ -59,17 +72,6 @@ function CheckoutPage() {
     router.push(`/order-confirmation?orderId=${orderId}`);
   };
 
-  const handleUpiVerification = async () => {
-    setIsVerifyingUpi(true);
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-    setIsVerifyingUpi(false);
-    setIsUpiVerified(true);
-  };
-
-  useEffect(() => {
-    setIsUpiVerified(false);
-  }, [paymentMethod]);
-
   if (!isClient) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -78,7 +80,7 @@ function CheckoutPage() {
     );
   }
   
-  if (itemCount === 0) {
+  if (itemCount === 0 && !isPlacingOrder) {
     return (
       <div className="text-center py-16">
         <h2 className="text-2xl font-bold">Your Cart is Empty</h2>
@@ -189,11 +191,11 @@ function CheckoutPage() {
                     <div className='flex justify-center'>
                          <Image src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=shopora@mock" alt="UPI QR Code" width={200} height={200} data-ai-hint="qr code" />
                     </div>
-                    {!isUpiVerified && (
-                        <Button onClick={handleUpiVerification} disabled={isVerifyingUpi} className="mt-4">
-                            {isVerifyingUpi ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                            {isVerifyingUpi ? 'Verifying...' : 'Verify Payment'}
-                        </Button>
+                    {isVerifyingUpi && (
+                        <div className="mt-4 flex items-center justify-center gap-2 text-muted-foreground font-semibold">
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            <span>Verifying payment...</span>
+                        </div>
                     )}
                     {isUpiVerified && (
                         <div className="mt-4 flex items-center justify-center gap-2 text-green-600 font-semibold">
