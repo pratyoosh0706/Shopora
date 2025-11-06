@@ -49,6 +49,14 @@ export default function LoginPage() {
   });
 
   const onSubmit = async (data: LoginFormValues) => {
+    if (!auth) {
+      toast({
+        variant: 'destructive',
+        title: 'Login Failed',
+        description: 'Authentication service is not available. Please try again later.',
+      });
+      return;
+    }
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       toast({

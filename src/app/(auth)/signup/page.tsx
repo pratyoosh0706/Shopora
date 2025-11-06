@@ -27,10 +27,9 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Logo } from '@/components/logo';
 import { productCategories, type ProductCategory } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
-import { useAuth } from '@/firebase';
+import { useAuth, useFirestore } from '@/firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { setDocumentNonBlocking } from '@/firebase';
-import { doc, getFirestore } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 import { FirebaseError } from 'firebase/app';
 
 const signupSchema = z
@@ -53,7 +52,7 @@ export default function SignupPage() {
   const router = useRouter();
   const { toast } = useToast();
   const auth = useAuth();
-  const firestore = getFirestore();
+  const firestore = useFirestore();
 
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(signupSchema),
@@ -67,6 +66,14 @@ export default function SignupPage() {
   });
 
   const onSubmit = async (data: SignupFormValues) => {
+    if (!auth || !firestore) {
+       toast({
+        variant: 'destructive',
+        title: 'Signup Failed',
+        description: 'Authentication service not available. Please try again later.',
+      });
+      return;
+    }
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -80,7 +87,7 @@ export default function SignupPage() {
       });
 
       const userDocRef = doc(firestore, 'users', user.uid);
-      setDocumentNonBlocking(
+      await setDoc(
         userDocRef,
         {
           id: user.uid,
